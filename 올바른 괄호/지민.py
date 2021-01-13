@@ -18,4 +18,7 @@ def solution(s):
                 #stack에 값이 없는데 ')'이면
                 else:
                     return False
+    
+    if len(s_stack) != 0: 
+        answer = False
     return answer
