@@ -3,7 +3,6 @@
 #include <vector>
 
 using namespace std;
-https://github.com/Soogyung1106/Algorithm-Study
 int tar;
 int count = 0;
 
