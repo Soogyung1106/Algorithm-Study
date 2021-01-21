@@ -34,7 +34,7 @@ int solution(int bridge_length, int weight, vector<int> truck_weights) {
 		//도착한 트럭 제외
 		while ((on_bridge.size() > 0) && (on_bridge.front().second <= 0))
 		{
-		    on_bridge.erase(on_bridge.begin());
+			on_bridge.erase(on_bridge.begin());
 		}
 	}
 	
