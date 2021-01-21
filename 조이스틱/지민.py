@@ -32,6 +32,7 @@ def solution(name):
                     rIdx += 1
                 else:
                     break
+            for i in range(1, length):
                 if name[idx-i] == 'A':
                     lIdx += 1
                 else:
