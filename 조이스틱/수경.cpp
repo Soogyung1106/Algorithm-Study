@@ -1,3 +1,5 @@
+/* 참고한 사이트 : https://mind-devlog.tistory.com/6 */
+
 #include <algorithm>
 #include <iostream>
 
