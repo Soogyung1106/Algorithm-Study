@@ -40,7 +40,7 @@ int solution(int n, vector<vector<int>> costs) {
     int cost = 0, edges = 0; //비용, 연결된 간선의 개수
     for(auto c : costs){
         //종료조건
-        if(edges == n-1) return cost;
+        if(edges == n-1) break;
         
         //사이클을 생성하지 않는다면.
         if(!isCycle(c[0], c[1])){ //Find하기 
