@@ -42,7 +42,8 @@ int main()
         }
     }
     
-    for(int i = 0; i<N; i++){
+    for(int i = 0; i<N; i++)
+	{
         for(int j = 0; j<M; j++)
 		{
             if(box[i][j]==1 && check[i][j]==0)
@@ -84,4 +85,6 @@ int main()
     }
 
     printf("%d", Max());
+
+    return 0;
 }
