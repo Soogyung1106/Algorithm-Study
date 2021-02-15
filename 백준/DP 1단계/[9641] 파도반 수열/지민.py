@@ -9,7 +9,7 @@ if __name__=="__main__":
 
     for _ in range(T):
         N = int(*map(int, sys.stdin.readline().split()))
-        for idx in range(3, N+1):
+        for idx in range(4, N+1):
             arr[idx] = (arr[idx-3]+arr[idx-2])
         answer.append(arr[N])
 
