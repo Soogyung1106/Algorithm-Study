@@ -3,7 +3,7 @@
 #include <queue>
 #include <algorithm>
 #include <vector>
-#include <cstring>
+
 #define MAX 20001
 
 using namespace std;
