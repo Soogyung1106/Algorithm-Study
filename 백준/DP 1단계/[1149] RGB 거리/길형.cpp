@@ -27,9 +27,9 @@ int main(void)
 
 	for (int i = 2; i <= N; i++)
 	{
-		dp[i][0] = min(dp[i - 1][1], dp[i - 1][2]) + rgb[i][0];
-		dp[i][1] = min(dp[i - 1][0], dp[i - 1][2]) + rgb[i][1];
-		dp[i][2] = min(dp[i - 1][0], dp[i - 1][1]) + rgb[i][2];
+		dp[i][0] = min(dp[i - 1][1], dp[i - 1][2]) + rgb[i][0]; // r(gb,bg)
+		dp[i][1] = min(dp[i - 1][0], dp[i - 1][2]) + rgb[i][1]; // g(rb,br)
+		dp[i][2] = min(dp[i - 1][0], dp[i - 1][1]) + rgb[i][2]; // b(rg,gr)
 	}
 
 	cout << min(min(dp[N][0], dp[N][1]), dp[N][2]) << endl;
