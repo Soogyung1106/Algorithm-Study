@@ -25,7 +25,7 @@ int main(void)
 
 		for (int k = 0; k < str.length(); k++)
 		{
-			sum += str[k] - 48;
+			sum += str[k] - '0';
 		}
 
 		sum += i;
