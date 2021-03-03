@@ -56,7 +56,7 @@ int main(void)
 			info[u].push_back({ v, c, d });
 		}
 
-		priority_queue<TUPLE, vector<TUPLE>, greater<TUPLE> > pq; // {도착도시의 Index, 비용, 소요시간}
+		priority_queue<TUPLE, vector<TUPLE>, greater<TUPLE> > pq; // 시간 도착지 비용
 
 		pq.push({ 0, 1,0 });
 
