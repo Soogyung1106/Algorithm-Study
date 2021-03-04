@@ -47,11 +47,11 @@ int main(void)
 
 	while(E--)
 	{
-		int from, to, val;
-		cin >> from >> to >> val;
+		int from, to, cost;
+		cin >> from >> to >> cost;
 
-		graph[from].push_back(make_pair(to, val));
-		graph[to].push_back(make_pair(from, val));
+		graph[from].push_back(make_pair(to, cost));
+		graph[to].push_back(make_pair(from, cost));
 	}
 
 	priority_queue<PAIR, vector<PAIR>, greater<PAIR>> pq; //cost 로 우선순위 정렬을 해야하기 때문에 pair{cost, vertex} 순서로 넣어준다.
