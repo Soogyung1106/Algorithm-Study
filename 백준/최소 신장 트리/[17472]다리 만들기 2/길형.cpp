@@ -84,7 +84,7 @@ int Find(int x)
 	return parent[x] = Find(parent[x]);
 }
 
-void merge(int a, int b)
+void Union(int a, int b)
 {
 	a = Find(a);
 	b = Find(b);
@@ -105,7 +105,7 @@ int MST()
 		int land2 = get<2>(edge[i]); // B섬
 		int dist = get<0>(edge[i]); // A-B 사이의 거리
 		if (Find(land1) == Find(land2)) continue;
-		merge(land1, land2);
+		Union(land1, land2);
 		sum += dist;
 	}
 	return sum;
