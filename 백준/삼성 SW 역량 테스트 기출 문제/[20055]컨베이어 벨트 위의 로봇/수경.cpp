@@ -1,3 +1,4 @@
+//#define _CRT_SECURE_NO_WARNINGS
 #include <iostream>
 #include <queue>
 
@@ -16,6 +17,7 @@ void Move_Belt() {
 	Start--; //0
 	End--; //5
 	if (Start < 1) Start = 2 * N; //start의 위치는 0 -> 6 
+	if (End < 1) End = 2 * N;
 }
 
 void Move_Robot(){
@@ -27,7 +29,7 @@ void Move_Robot(){
 		Visit[Cur] = false; //로봇이 올라와 있다고 체크
 		Robot.pop();
 
-		if (Cur == End) continue; //?
+		if (Cur == End) continue; 
 
 		int Next = Cur + 1; //움직일 다음 위치
 		if (Next > 2 * N) Next = 1; //"올라가야 하는 위치"라면.
@@ -82,7 +84,7 @@ int main(void)
 	cin.tie(NULL);
 	cout.tie(NULL);
 
-	//freopen("Input.txt", "r", stdin);
+	//freopen("input.txt", "r", stdin);
 	cin >> N >> K;
 	for (int i = 1; i <= 2 * N; i++) cin >> Belt[i]; //컨베이어 벨트의 내구도 입력 
 
@@ -90,4 +92,3 @@ int main(void)
 
 	return 0;
 }
-
