@@ -21,7 +21,7 @@ int N, K, L;
 int board[101][101]; //0으로 초기화(아무것도 없음.)
 queue<tuple<int, char>> directions; //뱀의 이동 방향
 deque<tuple<int, int>> snake; //뱀이 보드에서 차지하고 있는 몸통의 좌표(좌 끝: 꼬리, 우 끝: 머리)
-int nextDir[4][2] = { {0, 1}, {-1, 0}, {0, -1}, {1, 0} }; //이동 방향(→ ↓ ← ↑ )
+int nextDir[4][2] = { {0, 1}, {-1, 0}, {0, -1}, {1, 0} }; //이동 방향(→ ↑ ← ↓)
 int time = 0; 
 
 void gameStart() {
@@ -94,7 +94,6 @@ int main() {
 	//freopen("input1.txt", "r", stdin);
 	//freopen("input2.txt", "r", stdin);
 	//freopen("input3.txt", "r", stdin);
-
 
 	//입력
 	cin >> N; //보드의 크기
