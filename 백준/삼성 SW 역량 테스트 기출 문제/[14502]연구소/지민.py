@@ -3,7 +3,7 @@ from collections import deque
 from itertools import combinations
 
 
-def separated_virus(start, N, M, graph):
+def spread_virus(start, N, M, graph):
     route = deque(start)
 
     dx = [-1, 1, 0, 0]
@@ -41,7 +41,7 @@ if __name__=="__main__":
             map_temp[c[0]][c[1]] = 1
 
         # 바이러스 퍼뜨리기
-        separated_virus(virus, N, M, map_temp)
+        spread_virus(virus, N, M, map_temp)
 
         # 0 세기
         map_count = sum(map_temp, [])
