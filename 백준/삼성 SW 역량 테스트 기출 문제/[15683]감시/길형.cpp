@@ -174,7 +174,7 @@ int check() // 사각지대를 구하는 함수
 	return space;
 }
 
-void dfs(int inx, int cnt) 
+void dfs(int idx, int cnt) 
 {
 	if (cnt == cctv.size()) // 모든 cctv의 방향을 설정했다면
 	{
@@ -184,8 +184,8 @@ void dfs(int inx, int cnt)
 		return;
 	}
 
-	int x = cctv[inx].first;
-	int y = cctv[inx].second;
+	int x = cctv[idx].first;
+	int y = cctv[idx].second;
 
 	
 	for (int k = 1; k <= 4; k++) // cctv 방향 설정
@@ -194,9 +194,9 @@ void dfs(int inx, int cnt)
 		if (map[x][y] == 5 && k > 1) continue;
 		if (map[x][y] == 2 && k > 2) continue;
 
-		cctv_dir[inx] = k;
-		dfs(inx + 1, cnt + 1);
-		cctv_dir[inx] = 0;
+		cctv_dir[idx] = k;
+		dfs(idx + 1, cnt + 1);
+		cctv_dir[idx] = 0;
 	}
 }
 
