@@ -10,7 +10,7 @@
 
 using namespace std;
 
-int	 N, answer;
+int	N, answer;
 int MAP[MAX][MAX];
 bool visit[MAX][MAX];
 int spread[4][5][5] =
@@ -34,16 +34,16 @@ int spread[4][5][5] =
 	 {0, 10, -1, 10, 0},
 	 {2, 7, 0, 7, 2},
 	 {0, 1, 0, 1, 0},
-	 {0, 0, 0, 0, 0}} 
+	 {0, 0, 0, 0, 0}}
 };
 
-int dy[4] = {0,1,0,-1};
-int dx[4] = {-1,0,1,0};
+int dy[4] = { 0,1,0,-1 };
+int dx[4] = { -1,0,1,0 };
 
 bool check(int y, int x)
 {
 	if (y < 0 || x < 0 || y >= N || x >= N) return false;
-		
+
 	return true;
 }
 
@@ -93,7 +93,7 @@ void move(int y, int x, int dir)
 	{
 		MAP[ty][tx] += target - moving;
 	}
-		
+
 	answer += over;
 }
 
@@ -152,7 +152,7 @@ int main()
 
 		if (y == 0 && x == 0) break;
 	}
-		
+
 	cout << answer << endl;
 
 	return 0;
