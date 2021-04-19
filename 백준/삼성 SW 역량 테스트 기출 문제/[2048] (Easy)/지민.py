@@ -37,36 +37,27 @@ def move_rightward(graph):
     return graph
 
 
-def move_blocks(times, graph, process):
+def move_blocks(times, graph):
     global max_value
     if times == 5:
-        print('5', graph)
         _game_board_temp = sum(graph, [])
         max_value = max(max_value, max(_game_board_temp))
-        print(max_value)
         return
 
     _graph = [r[:] for r in graph]
-    _process = [x for x in process]
 
     for idx in range(4):
         if idx in (0, 1):
             _graph = list(map(list, zip(*_graph)))
-            print('transpose', _graph)
-
-        _process += [idx]
 
         func = functions[idx]
-        print('times', times, _process, func)
         _graph = func(_graph)
 
         if idx in (0, 1):
             _graph = list(map(list, zip(*_graph)))
 
-        print(_graph)
-        move_blocks(times + 1, _graph, _process)
+        move_blocks(times + 1, _graph)
         _graph = [r[:] for r in graph]
-        _process = [x for x in process]
 
 
 if __name__ == '__main__':
@@ -76,6 +67,5 @@ if __name__ == '__main__':
     functions = {0: move_leftward, 1: move_rightward, 2: move_leftward, 3: move_rightward}
 
     max_value = 0
-    process = []
-    move_blocks(0, game_board, process)
+    move_blocks(0, game_board)
     print(max_value)
