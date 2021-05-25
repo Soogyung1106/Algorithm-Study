@@ -1,3 +1,5 @@
+#https://up-to-date-items.tistory.com/123?category=975542
+
 d, n = map(int, input().split())
 oven = list(map(int, input().split()))
 doughs = list(map(int, input().split()))
