@@ -25,7 +25,6 @@ int main(void)
 			}else{
 				DP[i+1][j+1] = max(DP[i][j+1], DP[i+1][j]);
 				if (LCS[i][j+1].length() > LCS[i+1][j].length())  LCS[i+1][j+1] = LCS[i][j+1];
-
 				else  LCS[i+1][j+1] = LCS[i+1][j];
 			}
 
