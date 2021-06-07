@@ -15,17 +15,18 @@ int main(void)
 	//freopen("input1.txt", "r", stdin);
 	cin >> A >> B;
 
-	for (int i = 1; i <= A.length(); i++) {
-		for (int j = 1; j <= B.length(); j++) {
+	for (int i = 0; i < A.length(); i++) {
+		for (int j = 0; j < B.length(); j++) {
 
-			if (A[i - 1] == B[j - 1]) {
-				DP[i][j] = DP[i - 1][j - 1] + 1;
-				LCS[i][j] = LCS[i][j] + LCS[i - 1][j - 1] + A[i - 1];
+			if (A[i] == B[j]) {
+				DP[i+1][j+1] = DP[i][j] + 1;
+				LCS[i+1][j+1] = LCS[i+1][j+1] + LCS[i][j] + A[i];
 			
 			}else{
-				DP[i][j] = max(DP[i - 1][j], DP[i][j - 1]);
-				if (LCS[i - 1][j].length() > LCS[i][j - 1].length())  LCS[i][j] = LCS[i - 1][j];
-				else  LCS[i][j] = LCS[i][j - 1];
+				DP[i+1][j+1] = max(DP[i][j+1], DP[i+1][j]);
+				if (LCS[i][j+1].length() > LCS[i+1][j].length())  LCS[i+1][j+1] = LCS[i][j+1];
+
+				else  LCS[i+1][j+1] = LCS[i+1][j];
 			}
 
 		}
